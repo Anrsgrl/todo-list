@@ -13,9 +13,6 @@
   <li> Material UI </li>
   <li> Toastify </li>
   <li> Framer Motion </li>
-  <li>
-    <a href="https://openweathermap.org/api"> Api </a>
-  </li>
 </ul>
 
 <h2 align="left"> Author: </h1>
