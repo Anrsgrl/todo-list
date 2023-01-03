@@ -28,6 +28,11 @@ function Todo() {
     });
     setListe(updatedItems);
   }
+  
+  const deleteAll = () =>{
+    setlist([]);
+    setWorking(true);
+  }
 
   const addItems = () => {
     if(newTitle !== ""){
@@ -70,7 +75,7 @@ function Todo() {
               <IconButton onClick={() => addItems()}>
                 <Add />
               </IconButton>
-              <IconButton onClick={() => setListe([]); setWorking(true)} className='clearBtn'>
+              <IconButton onClick={() => deleteAll()} className='clearBtn'>
                 <PlaylistRemove />
               </IconButton>
               </InputAdornment>
