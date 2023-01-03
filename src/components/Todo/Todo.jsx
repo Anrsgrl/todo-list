@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './Todo.scss';
 
 function Todo() {
-  const [liste, setListe] = useState([]);
+  const [list, setList] = useState([]);
   const [newTitle, setNewTitle] = useState('');
   const [working, setWorking] = useState(true);
 
@@ -23,10 +23,10 @@ function Todo() {
       progress: undefined,
       theme: "dark",
     });
-    const updatedItems = liste.filter((el)=> {
+    const updatedItems = list.filter((el)=> {
       return index !== el.id;
     });
-    setListe(updatedItems);
+    setList(updatedItems);
   }
   
   const deleteAll = () =>{
@@ -36,7 +36,7 @@ function Todo() {
 
   const addItems = () => {
     if(newTitle !== ""){
-      setListe([...liste, {id: Date.now(), title: newTitle, completed: false }]); setNewTitle("");
+      setList([...list, {id: Date.now(), title: newTitle, completed: false }]); setNewTitle("");
       setWorking(true);
     } else{
       setWorking(false);
@@ -45,7 +45,7 @@ function Todo() {
   }
 
   const setCompleted = (item) => {
-    setListe(liste.map(el => el.id === item.id ? {...el, completed: !el.completed} : el));
+    setList(list.map(el => el.id === item.id ? {...el, completed: !el.completed} : el));
     toast.success('Good Job!', {
       position: "top-right",
       autoClose: 500,
