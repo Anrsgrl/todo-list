@@ -30,7 +30,7 @@ function Todo() {
   }
   
   const deleteAll = () =>{
-    setlist([]);
+    setList([]);
     setWorking(true);
   }
 
@@ -87,7 +87,7 @@ function Todo() {
           </CardContent>
         </Card>
         <div className="Todo-list-items">
-        {liste.map((item, index) => 
+        {list.map((item, index) => 
           <>
             <Card key={index} className={item.completed ? 'done' : ''} sx={{mt: 2}}>
             <CardContent sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
