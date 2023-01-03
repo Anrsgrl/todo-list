@@ -2,6 +2,16 @@
     text-decoration: line-through;
 }
 
+.active{
+    display: block !important;
+}
+.error-msg{
+    color: red;
+    display: none;
+    margin: 0;
+    margin-top: 5px;
+}
+
 .Todo-field{
     width: 100%;
     height: fit-content;
@@ -12,7 +22,23 @@
         margin: 0 auto;
     }
     .Todo-list-items{
-        margin-top: 24px;
+        margin-top: 5px;
         height: 400px;
+        overflow-y: auto;
+        border-radius: 20px;
+        scroll-behavior: smooth;
     }
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #be90cb;
+    border-radius: 10px;
+    border: 3px solid transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    margin-top: 24px;
 }

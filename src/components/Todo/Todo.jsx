@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { motion } from "framer-motion"
 import {Card, CardContent, TextField, InputAdornment, ToggleButton, Typography, IconButton} from '@mui/material';
 import {RadioButtonChecked, Check, Clear, Add, PlaylistRemove} from '@mui/icons-material';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './Todo.scss';
 
 function Todo() {
   const [liste, setListe] = useState([]);
   const [newTitle, setNewTitle] = useState('');
+  const [working, setWorking] = useState(true);
 
   const deleteItems = (index) => {
     const updatedItems = liste.filter((el)=> {
@@ -15,11 +20,35 @@ function Todo() {
   }
 
   const addItems = () => {
-    setListe([...liste, {id: Date.now(), title: newTitle, completed: false }]); setNewTitle("");
+    if(newTitle !== ""){
+      setListe([...liste, {id: Date.now(), title: newTitle, completed: false }]); setNewTitle("");
+      setWorking(true);
+    } else{
+      setWorking(false);
+    }
+    
+  }
+
+  const setCompleted = (item) => {
+    setListe(liste.map(el => el.id === item.id ? {...el, completed: !el.completed} : el));
+    toast.success('Good Job!', {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }
 
   return (
-    <div className="Todo-field">
+    <motion.div className="Todo-field" 
+    initial={{y: 0}}
+    animate={{y: 200}}
+    transition={{duration: 2}}
+    >
       <div className="Todo-list-area">
       <Typography variant='h5' gutterBottom>TODO</Typography>
         <Card>
@@ -31,7 +60,7 @@ function Todo() {
               <IconButton onClick={() => addItems()}>
                 <Add />
               </IconButton>
-              <IconButton onClick={() => setListe([])}>
+              <IconButton onClick={() => setListe([])} className='clearBtn'>
                 <PlaylistRemove />
               </IconButton>
               </InputAdornment>
@@ -39,20 +68,34 @@ function Todo() {
           fullWidth 
           required
           />
-          {/* <button onClick={() => {setListe([...liste, {id: Date.now(), title: newTitle, completed: false }]); setNewTitle("")}}>XXXX</button> */}
+          <p className={working ? 'error-msg' : 'error-msg active'}>U have to write something</p>
           </CardContent>
         </Card>
         <div className="Todo-list-items">
         {liste.map((item, index) => 
-          <Card key={index} className={item.completed ? 'done' : ''} sx={{mt: 2}}>
-            <CardContent sx={{display:'flex', justifyContent:'space-between'}}>
+          <>
+            <Card key={index} className={item.completed ? 'done' : ''} sx={{mt: 2}}>
+            <CardContent sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
               <ToggleButton
-              onClick={() => {setListe(liste.map(el => el.id === item.id ? {...el, completed: !el.completed} : el))}}
+              onClick={() => {setCompleted(item)}}
               sx={{borderRadius:"50%"}}
               size='small'
               value="check"
             >
             <Check />
+            <ToastContainer
+              position="top-right"
+              autoClose={1000}
+              // limit={1}
+              hideProgressBar={false}
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+              />
               </ToggleButton>
               {item.title}
             <ToggleButton
@@ -64,10 +107,12 @@ function Todo() {
               <Clear />
               </ToggleButton>
             </CardContent>
-          </Card>)}
+            </Card>
+          </>
+          )}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
