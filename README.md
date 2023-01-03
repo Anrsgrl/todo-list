@@ -11,8 +11,8 @@
   <li> Javascript </li>
   <li> React </li>
   <li> Material UI </li>
-  <li> Toastify </li>
   <li> Framer Motion </li>
+  <li> Toastify </li>
 </ul>
 
 <h2 align="left"> Author: </h1>
