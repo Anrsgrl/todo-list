@@ -70,7 +70,7 @@ function Todo() {
               <IconButton onClick={() => addItems()}>
                 <Add />
               </IconButton>
-              <IconButton onClick={() => setListe([])} className='clearBtn'>
+              <IconButton onClick={() => setListe([]); setWorking(true)} className='clearBtn'>
                 <PlaylistRemove />
               </IconButton>
               </InputAdornment>
