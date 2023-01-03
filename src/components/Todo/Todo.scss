@@ -16,10 +16,13 @@
     width: 100%;
     height: fit-content;
     .Todo-list-area{
-        width: 30%;
+        max-width: 550px;
         height: fit-content;
         position: relative;
         margin: 0 auto;
+        @media(max-width: 767px){
+            width: 80%;
+        }
     }
     .Todo-list-items{
         margin-top: 5px;

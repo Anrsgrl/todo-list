@@ -13,6 +13,16 @@ function Todo() {
   const [working, setWorking] = useState(true);
 
   const deleteItems = (index) => {
+    toast('🗑️Deleted!', {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
     const updatedItems = liste.filter((el)=> {
       return index !== el.id;
     });
@@ -68,7 +78,7 @@ function Todo() {
           fullWidth 
           required
           />
-          <p className={working ? 'error-msg' : 'error-msg active'}>U have to write something</p>
+          <p className={working ? 'error-msg' : 'error-msg active'}>You have to write something</p>
           </CardContent>
         </Card>
         <div className="Todo-list-items">
@@ -85,8 +95,7 @@ function Todo() {
             <Check />
             <ToastContainer
               position="top-right"
-              autoClose={1000}
-              // limit={1}
+              autoClose={1500}
               hideProgressBar={false}
               newestOnTop
               closeOnClick
