@@ -1,0 +1,18 @@
+.done{
+    text-decoration: line-through;
+}
+
+.Todo-field{
+    width: 100%;
+    height: fit-content;
+    .Todo-list-area{
+        width: 30%;
+        height: fit-content;
+        position: relative;
+        margin: 0 auto;
+    }
+    .Todo-list-items{
+        margin-top: 24px;
+        height: 400px;
+    }
+}
