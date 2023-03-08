@@ -1,34 +1,33 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
 }
 
-.App{
+.App {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  .App-bg{
+  font-family: 'Poppins', sans-serif !important;
+
+  .App-bg {
     height: 100vh;
     width: 100%;
-    background-image: url(./assets/bg.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(2.5px);
+    background: rgb(225, 190, 231);
+    background: radial-gradient(circle, rgba(225, 190, 231, 1) 0%, rgba(186, 104, 200, 1) 79%);
     position: absolute;
   }
 }
 
-.clearBtn:hover::after{
+.clearBtn:hover::after {
   visibility: visible;
   opacity: 1;
 }
 
-.clearBtn::after{
+.clearBtn::after {
   visibility: hidden;
   opacity: 0;
   content: "Remove all";
