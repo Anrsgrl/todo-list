@@ -3,6 +3,7 @@ import { purple } from '@mui/material/colors';
 import React from 'react';
 import './App.scss';
 import Todo from './components/Todo/Todo';
+import Footer from './components/Footer/Footer';
 
 function App() {
   let theme = createTheme({
@@ -42,6 +43,7 @@ function App() {
       <div className="App-bg"></div>
       <ThemeProvider theme={theme}>
         <Todo />
+        <Footer />
       </ThemeProvider>
     </div>
   );
