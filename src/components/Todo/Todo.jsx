@@ -141,7 +141,7 @@ function Todo() {
           {data.map((item) =>
             <>
               <Card key={item.id} className={item.completed ? 'done' : ''} sx={{ mt: 2 }}>
-                <CardContent sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <CardContent style={{ paddingBottom: "16px" }} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <Fab
                     color="primary"
                     onClick={() => { setCompleted(item) }}
