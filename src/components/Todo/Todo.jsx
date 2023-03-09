@@ -59,8 +59,8 @@ function Todo() {
 
   return (
     <motion.div className="Todo-field"
-      initial={{ y: 0 }}
-      animate={{ y: 200 }}
+      initial={{ y: -200, opacity: 0, }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 2 }}
     >
       <div className="Todo-list-area">
