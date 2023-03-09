@@ -40,7 +40,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-bg"></div>
       <ThemeProvider theme={theme}>
         <Todo />
         <Footer />
