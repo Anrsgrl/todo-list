@@ -7,8 +7,17 @@ import './Todo.scss';
 import { Box } from '@mui/system';
 import { useEffect } from 'react';
 
+const getLocalStorage = () => {
+  let list = localStorage.getItem("list");
+  if (list) {
+    return (list = JSON.parse(localStorage.getItem("list")))
+  } else {
+    return [];
+  }
+}
+
 function Todo() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getLocalStorage());
   const [newTitle, setNewTitle] = useState('');
   const [working, setWorking] = useState(true);
   const [status, setStatus] = useState('');
@@ -49,6 +58,7 @@ function Todo() {
   }
 
   useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
     setData(list)
     if (status === 'done') {
       setData(list.filter((e) => e.completed))
