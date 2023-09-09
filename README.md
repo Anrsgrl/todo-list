@@ -1,25 +1,51 @@
-<h1 align="center"> To Do List📝  </h1>
 
-###
+# To Do List📝
 
-<h2 align="left"> Used Technologies: </h1>
+A dynamic and aesthetic To-Do List📝 Website built with React / Javascript / MUI.    
+**(Save in localstorage)**
 
-###
 
-<ul>
-  <li> Semantic HTML5 markup </li>
-  <li> Javascript </li>
-  <li> React </li>
-  <li> Material UI </li>
-  <li> Framer Motion </li>
-</ul>
+## Authors
 
-<h2 align="left"> Author: </h1>
+- [Anrsgrl](https://www.github.com/Anrsgrl)
 
-###
 
-<ul>
- <li>
-    <a href="https://github.com/Anrsgrl"> Anar Asgarli </a>
-  </li>
-</ul>
+## Screenshots
+
+[![App Screenshot](./public/todolist-screenshot.png)](https://todo-list-by-anrsgrl.netlify.app)
+[![App's filters Screenshot](./public/todolist-screenshot-filters.png)](https://todo-list-by-anrsgrl.netlify.app)
+
+## Tech Stack
+- **JavaScript:** The primary programming language.
+- **React:** Utilized for building the user interface.
+- **Redux toolkit:** Employed for state management.
+- **Material UI (MUI):** Styling and layout of components.
+- **Framer Motion:** Integrated for animations.
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Anrsgrl/todo-list
+```
+
+Go to the project directory
+
+```bash
+  cd todo-list
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm start
+```
+
