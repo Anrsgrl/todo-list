@@ -1,7 +1,7 @@
 
 # To Do List📝
 
-A dynamic and aesthetic To-Do List📝 Website built with React / Javascript / MUI.    
+A dynamic and aesthetic To-Do List
 **(Save in localstorage)**
 
 
