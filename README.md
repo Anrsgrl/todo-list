@@ -5,11 +5,6 @@ A dynamic and aesthetic To-Do List
 **(Save in localstorage)**
 
 
-## Authors
-
-- [Anrsgrl](https://www.github.com/Anrsgrl)
-
-
 ## Screenshots
 
 [![App Screenshot](./public/todolist-screenshot.png)](https://todo-list-by-anrsgrl.netlify.app)
@@ -49,3 +44,7 @@ Start the server
   npm start
 ```
 
+
+## Authors
+
+- [Anrsgrl](https://www.github.com/Anrsgrl)
