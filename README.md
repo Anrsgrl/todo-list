@@ -2,7 +2,7 @@
 # To Do List📝
 
 A dynamic and aesthetic To-Do List
-**(Save in localstorage)**
+- **(Save in localstorage)**
 
 
 ## Authors
