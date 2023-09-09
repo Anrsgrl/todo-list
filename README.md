@@ -1,8 +1,8 @@
 
 # To Do List📝
 
-A dynamic and aesthetic To-Do List
-- **(Save in localstorage)**
+A dynamic and aesthetic To-Do List      
+**(Save in localstorage)**
 
 
 ## Authors
